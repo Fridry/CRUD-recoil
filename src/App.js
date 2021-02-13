@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Container from "react-bootstrap/Container";
+import { Row, Col } from "react-bootstrap";
+
+import AddProduct from "./components/AddProduct";
+import FilterProducts from "./components/FilterProducts";
+import ListProducts from "./components/ListProducts";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+    <Container className="p-3">
+      <div className="py-5 text-center">
+        <h1>Product's CRUD</h1>
+        <p className="lead">
+          Simple CRUD made with React, Bootstrap and Recoil.js
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </div>
+      <Row>
+        <Col>
+          <AddProduct />
+        </Col>
+        <Col className="col-8">
+          <FilterProducts />
+          <hr />
+          <ListProducts />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
